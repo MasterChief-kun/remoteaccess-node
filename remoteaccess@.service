@@ -1,0 +1,11 @@
+[Unit]
+Description=Send ping to remoteaccess server on %I
+Wants=network-online.target
+After=network-online.target
+Before=%I.target
+
+[Service]
+ExecStart=/usr/bin/node <path_to_src> %I
+
+[Install]
+WantedBy=multi-user.target
